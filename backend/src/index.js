@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { connectDB } from "./lib/db.js";
 import authRoutes from "./routes/auth.route.js"; // Need to add `.js` since using ES Modules
-import messaegRoutes from "./routes/message.route.js"; // Need to add `.js` since using ES Modules
+import messageRoutes from "./routes/message.route.js"; // Need to add `.js` since using ES Modules
 
 import cookieParser from "cookie-parser";
 
@@ -28,7 +28,7 @@ app.use(
 );
 // Routes
 app.use("/api/auth", authRoutes); // Mount authentication routes
-app.use("/api/message", messaegRoutes);
+app.use("/api/messages", messageRoutes);
 // Start the server and connect to the database
 app.listen(PORT, () => {
   console.log(`Server is running on PORT: ${PORT}`);
